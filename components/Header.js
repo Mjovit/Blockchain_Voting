@@ -14,7 +14,7 @@ export default () => {
 
             <Menu.Menu position = "right">
             <Link route="../pages/evote/candidates">
-                <a className="item">Candidates</a>
+                <a className="item">logout</a>
             </Link>
 
                 

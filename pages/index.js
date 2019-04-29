@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+
+import { Header ,Segment} from 'semantic-ui-react'
+
 //import Popup from 'react-popup';
 import {
   Button,
@@ -61,16 +64,21 @@ class LoginIndex extends Component {
   };
   render() {
     return (
+      <Segment inverted>
+      
       <Container>
         <link
           rel="stylesheet"
           href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
         />
+        <Header inverted pointing secondary size='huge' textAlign = 'center'>Evote</Header>
 
-        <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
+
+        <Form inverted pointing secondary onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
             <label>Voter ID</label>
             <Input
+              type="text" name="first-name" placeholder="Voter ID"
               value={this.state.userId}
               onChange={event => this.setState({ userId: event.target.value })}
             />
@@ -78,7 +86,7 @@ class LoginIndex extends Component {
           <Form.Field>
             <label>Password</label>
             <Input
-              type="password"
+              type="password" name="first-name" placeholder="Password"
               value={this.state.uPass}
               onChange={event => this.setState({ uPass: event.target.value })}
             />
@@ -88,10 +96,12 @@ class LoginIndex extends Component {
           </Form.Field>*/}
           <Message error header="Oops!" content={this.state.errorMessage} />
           <Button loading={this.state.loading} primary>
-            Submit
+            Login
           </Button>
         </Form>
       </Container>
+      </Segment>
+      
     );
   }
 }
