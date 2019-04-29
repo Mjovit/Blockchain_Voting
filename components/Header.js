@@ -6,7 +6,7 @@ export default () => {
     return (
         <Segment inverted>
         <Menu inverted pointing secondary>
-            <Link route="/dasboard">
+            <Link route="../dashboard">
                 <a className="item">Evote</a>
             </Link>
 
