@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Popup from "reactjs-popup";
 import { Header, Segment} from "semantic-ui-react";
 import {
   Button,
@@ -16,15 +15,15 @@ import { Router } from "../routes";
 
 class LoginIndex extends Component {
   state = {
-    userId: "",
-    uPass: "",
-    errorMessage: "",
+    userId: '',
+    uPass: '',
+    errorMessage: '',
     loading: false
   };
   onSubmit = event => {
     event.preventDefault();
     const { userId, uPass, loading, errorMessage } = this.state;
-    this.setState({ loading: true, errorMessage: "" });
+    this.setState({ loading: true, errorMessage: '' });
     try {
       var config = {
         apiKey: "AIzaSyBaO1rh2SwdcHWFlep_-cplUZXYfmOCjag",
