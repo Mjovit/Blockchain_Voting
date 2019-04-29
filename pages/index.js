@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-
-import { Header, Segment } from "semantic-ui-react";
-import Popup from "react-popup";
+import Popup from "reactjs-popup";
+import { Header, Segment} from "semantic-ui-react";
 import {
   Button,
   Checkbox,
@@ -38,7 +37,6 @@ class LoginIndex extends Component {
       // Initialize Firebase
       firebase.initializeApp(config);
       var ref = firebase.database().ref();
-      console.log("Success");
       ref.child("Voters").on("value", function(snapshot) {
         if (snapshot.child(userId).exists()) {
           if (snapshot.child(userId).val() == uPass) {
@@ -47,11 +45,11 @@ class LoginIndex extends Component {
             setTimeout("window.location.reload(true);", 5000);
           }
         } else {
-          Popup.alert('Invalid');
           setTimeout("window.location.reload(true);", 5000);
         }
       });
     } catch (err) {
+
       this.setState({ errorMessage: err.message });
     }
     this.setState({ loading: false });
