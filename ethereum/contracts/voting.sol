@@ -72,6 +72,17 @@ contract Voting{
         }
         return numOfVotes; 
     }
+    function winner() public view returns(string,uint) {
+        uint largest=candidates[0].totalvotes;
+        uint location=0;
+        for (uint j = 0; j < numcandidates; j++) {
+            if (candidates[j].totalvotes > largest) {
+                largest = candidates[j].totalvotes;
+                location=j;
+            }
+        }
+        return(candidates[location].name,largest);
+    }
     function getNumOfCandidates() public view returns(uint) {
         return numcandidates;
     }
@@ -84,5 +95,3 @@ contract Voting{
         return (candidateID,candidates[candidateID].name,candidates[candidateID].party);
     }
 }
-   
-    

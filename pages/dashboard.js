@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Menu, Segment } from 'semantic-ui-react';
-import voting from '../ethereum/voitng';
+import {  Menu, Segment } from 'semantic-ui-react';
 import Layout from '../components/Layout';
 import { Link } from '../routes';
 
@@ -16,7 +15,6 @@ class VotingIndex extends Component {
    render() {
     
    
-    const { activeItem } = this.state
 
     return (
         <Layout>
@@ -29,6 +27,10 @@ class VotingIndex extends Component {
 
       <Link route="/evote/candidates">
             <a className="item">Candidate list</a>
+      </Link>
+
+      <Link route="/evote/winner">
+            <a className="item">Result</a>
       </Link>
 
 

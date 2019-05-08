@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layoutadmin';
 import { Form, Button ,Input ,Message} from 'semantic-ui-react';
 import voting from '../../ethereum/voitng';
 import web3 from '../../ethereum/web3';
@@ -25,7 +25,7 @@ class VotingNew extends Component {
             from: accounts[0]
 
         });
-        Router.pushRoute('/');
+        Router.pushRoute('/sudoadmin');
     } catch (err){
         this.setState({ errorMessage: err.message });
     }

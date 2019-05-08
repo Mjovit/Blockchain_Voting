@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { Header, Menu, Segment } from 'semantic-ui-react';
 import voting from '../ethereum/voitng';
-import Layout from '../components/Layout';
+import Layout from '../components/Layoutadmin';
 import { Link } from '../routes';
 
 class VotingIndex extends Component {
-        /*static async getInitialProps() {
-        const votings = await voting.methods.candidates(0).call();
-        console.log(votings);
-        return { };
-    }*/
+
     
   state = {}
 
@@ -31,7 +27,7 @@ class VotingIndex extends Component {
             <a className="item">Add Candidate</a>
       </Link>
 
-      <Link route="/evote/candidates">
+      <Link route="/evote/candidatesadmin">
             <a className="item">Candidate list</a>
       </Link>
 
