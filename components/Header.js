@@ -14,7 +14,7 @@ export default () => {
 
             <Menu.Menu position = "right">
             <Link route="/">
-                <a className="item">logout</a>
+                <a className="item">Logout</a>
             </Link>
 
                 

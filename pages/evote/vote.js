@@ -25,7 +25,7 @@ class VotingVote extends Component {
             from: accounts[0]
 
         });
-        Router.pushRoute('/');
+        Router.pushRoute('../dashboard');
         //const add = await voting.methods.candidates(this.state.candidateid).call();
        // console.log(add);
        // Router.pushRoute('/');

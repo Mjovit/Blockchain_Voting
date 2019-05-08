@@ -5,7 +5,11 @@ import Layout from '../components/Layout';
 import { Link } from '../routes';
 
 class VotingIndex extends Component {
-        
+        /*static async getInitialProps() {
+        const votings = await voting.methods.candidates(0).call();
+        console.log(votings);
+        return { };
+    }*/
     
   state = {}
 
@@ -23,8 +27,8 @@ class VotingIndex extends Component {
         <div  style={{ marginBottom: 60}}>
       <Segment inverted>
       <Menu vertical inverted pointing secondary >
-      <Link route="/evote/vote">
-            <a className="item">Vote</a>
+      <Link route="/evote/new">
+            <a className="item">Add Candidate</a>
       </Link>
 
       <Link route="/evote/candidates">

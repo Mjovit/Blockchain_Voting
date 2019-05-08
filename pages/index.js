@@ -2,15 +2,12 @@ import React, { Component } from "react";
 import { Header, Segment} from "semantic-ui-react";
 import {
   Button,
-  Checkbox,
   Form,
   Input,
   Message,
   Container
 } from "semantic-ui-react";
-import * as firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
+import Firebase from "../components/firebase"
 import { Router } from "../routes";
 
 class LoginIndex extends Component {
@@ -25,26 +22,23 @@ class LoginIndex extends Component {
     const { userId, uPass, loading, errorMessage } = this.state;
     this.setState({ loading: true, errorMessage: '' });
     try {
-      var config = {
-        apiKey: "AIzaSyBaO1rh2SwdcHWFlep_-cplUZXYfmOCjag",
-        authDomain: "login-53740.firebaseapp.com",
-        databaseURL: "https://login-53740.firebaseio.com",
-        projectId: "login-53740",
-        storageBucket: "login-53740.appspot.com",
-        messagingSenderId: "126005352850"
-      };
+      
       // Initialize Firebase
-      firebase.initializeApp(config);
-      var ref = firebase.database().ref();
+      var ref = Firebase.database().ref();
       ref.child("Voters").on("value", function(snapshot) {
         if (snapshot.child(userId).exists()) {
           if (snapshot.child(userId).val() == uPass) {
+            if (userId == "admin") {
+              Router.pushRoute(`/sudodashboard`);
+            }
+            else { 
             Router.pushRoute(`/dashboard`);
+            }
           } else {
-            setTimeout("window.location.reload(true);", 5000);
+            setTimeout("window.location.reload(true);");
           }
         } else {
-          setTimeout("window.location.reload(true);", 5000);
+          setTimeout("window.location.reload(true);");
         }
       });
     } catch (err) {
@@ -54,6 +48,7 @@ class LoginIndex extends Component {
     this.setState({ loading: false });
   };
   render() {
+
     return (
       <Segment inverted>
         <Container>
