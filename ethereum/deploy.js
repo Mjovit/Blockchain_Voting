@@ -2,7 +2,7 @@ const HDWalletprovider = require("truffle-hdwallet-provider");
 const Web3 = require('web3');
 const compiledVoting = require('./build/Voting.json');
 
-const provider = new HDWalletprovider( 'volcano weather brief radio surface slab foot spot uncover walk retreat plate' , 'https://rinkeby.infura.io/v3/328d81183ced440283ab7823ca86f144' );
+const provider = new HDWalletprovider( 'elbow argue outside stove exercise velvet token atom tuition imitate beach neglect' , 'https://rinkeby.infura.io/v3/1a5c3ae2a13643c883dcecd1e9bb3759' );
 
 const web3 = new Web3(provider);
 
