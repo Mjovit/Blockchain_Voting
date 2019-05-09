@@ -19,6 +19,7 @@ class VotingNew extends Component {
         
         try{
         const accounts = await web3.eth.getAccounts();
+        console.log(accounts);
         await voting.methods
         .addCandidate(this.state.nameofthecandidate,this.state.party)
         .send({

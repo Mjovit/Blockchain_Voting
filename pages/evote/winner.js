@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import Layout from '../../components/Layout';
-import { Form, Button ,Input ,Message} from 'semantic-ui-react';
 import Voting from '../../ethereum/voitng';
-import web3 from '../../ethereum/web3';
-import { Router} from '../../routes';
-
 
 class Winner extends Component {
     static async getInitialProps(props){
@@ -12,13 +8,17 @@ class Winner extends Component {
         return{win};
     }
     render() {
-        
+        const pStyle = {
+            fontSize: '40px',
+            textAlign: 'center'
+          };
         return (
             <Layout>
-            <h3>Candidate Lists</h3>
+            <div>
            
-            <div>Congratulation!!</div>
-            <div> The Winner is {this.props.win[0]} with {this.props.win[1]} votes.</div>
+            <p style={pStyle}>Congratulation!!</p>
+            <p style={pStyle}> The Winner is {this.props.win[0]} with {this.props.win[1]} votes.</p>
+            </div>
             </Layout>
 
             

@@ -62,6 +62,7 @@ class VotingVote extends Component {
 
              <Button loading={this.state.loading} primary>Vote</Button>
             </Form>
+            <div>Check the candidate ID from candidate list before voting.</div>
         </Layout>
         );
     }
