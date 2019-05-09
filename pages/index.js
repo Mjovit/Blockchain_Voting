@@ -56,14 +56,15 @@ class LoginIndex extends Component {
             rel="stylesheet"
             href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
           />
-          <Header inverted pointing secondary size="huge" textAlign="center">
+          <Header 
+          inverted 
+           size="huge" textAlign="center">
             Evote
           </Header>
 
           <Form
             inverted
-            pointing
-            secondary
+            
             onSubmit={this.onSubmit}
             error={!!this.state.errorMessage}
           >
