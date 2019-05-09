@@ -33,7 +33,6 @@ class CandidateIndex extends Component {
                     key={index}
                     id={index}
                     request={request}
-                   // address={this.props.address}
             />
             );
         });

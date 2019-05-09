@@ -26,7 +26,7 @@ class VotingNew extends Component {
             from: accounts[0]
 
         });
-        Router.pushRoute('/sudoadmin');
+        Router.pushRoute('../evote/new');
     } catch (err){
         this.setState({ errorMessage: err.message });
     }

@@ -90,9 +90,7 @@ class LoginIndex extends Component {
                 onChange={event => this.setState({ uPass: event.target.value })}
               />
             </Form.Field>
-            {/*<Form.Field>
-            <Checkbox label="I agree to the Terms and Conditions" />
-          </Form.Field>*/}
+            
             <Message error header="Oops!" content={this.state.errorMessage} />
             <Button loading={this.state.loading} primary>
               Login
